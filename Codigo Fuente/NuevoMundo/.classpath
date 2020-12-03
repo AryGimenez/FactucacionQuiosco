@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="dist/lib/AbsoluteLayout.jar"/>
+	<classpathentry kind="lib" path="dist/lib/barbecue-1.5-beta1.jar"/>
+	<classpathentry kind="lib" path="dist/lib/commons-beanutils-1.8.2.jar"/>
+	<classpathentry kind="lib" path="dist/lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="dist/lib/commons-digester-1.7.jar"/>
+	<classpathentry kind="lib" path="dist/lib/commons-javaflow-20060411.jar"/>
+	<classpathentry kind="lib" path="dist/lib/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="dist/lib/hsqldb.jar"/>
+	<classpathentry kind="lib" path="dist/lib/iText-2.1.7.jar"/>
+	<classpathentry kind="lib" path="dist/lib/jasperreports-3.7.6.jar"/>
+	<classpathentry kind="lib" path="dist/lib/jcalendar-1.3.2.jar"/>
+	<classpathentry kind="lib" path="dist/lib/jide-oss-2.7.2.jar"/>
+	<classpathentry kind="lib" path="dist/lib/mysql-connector-java-5.1.16-bin.jar"/>
+	<classpathentry kind="lib" path="dist/lib/swing-layout-1.0.4.jar"/>
+	<classpathentry kind="lib" path="dist/NuevoMundo.jar"/>
+	<classpathentry kind="lib" path="lib/AbsoluteLayout.jar"/>
+	<classpathentry kind="lib" path="lib/barbecue-1.5-beta1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-beanutils-1.8.2.jar"/>
+	<classpathentry kind="lib" path="lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-digester-1.7.jar"/>
+	<classpathentry kind="lib" path="lib/commons-javaflow-20060411.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/hsqldb.jar"/>
+	<classpathentry kind="lib" path="lib/iText-2.1.7.jar"/>
+	<classpathentry kind="lib" path="lib/jasperreports-3.7.6.jar"/>
+	<classpathentry kind="lib" path="lib/jcalendar-1.3.2.jar"/>
+	<classpathentry kind="lib" path="lib/jide-oss-2.7.2.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.16-bin.jar"/>
+	<classpathentry kind="lib" path="lib/swing-layout-1.0.4.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

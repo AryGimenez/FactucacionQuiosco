@@ -1,0 +1,1 @@
+Logica_Negocio.Manejadora.MYSQL.jTabModel.Persona.LogN_ClassAb_ModeljTabPersonaMySql

@@ -1,0 +1,1 @@
+Logica_Negocio.Manejadora.MYSQL.LogN_Class_ManejPaisMySql

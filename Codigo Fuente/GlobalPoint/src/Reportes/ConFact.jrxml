@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="0.9090909090909095"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="217"/>
+	<parameter name="Nombre" class="java.lang.String"/>
+	<parameter name="Rut" class="java.lang.String"/>
+	<parameter name="Dir" class="java.lang.String"/>
+	<parameter name="Fecha" class="java.util.GregorianCalendar"/>
+	<parameter name="ConFin" class="java.lang.Boolean"/>
+	<parameter name="FacNum" class="java.lang.Integer"/>
+	<parameter name="FecSer" class="java.lang.String"/>
+	<parameter name="SubReport" class="net.sf.jasperreports.engine.JasperReport" isForPrompting="false"/>
+	<parameter name="SubReport2" class="net.sf.jasperreports.engine.JasperReport" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[SELECT
+     lineafactura.`LinF_PrePro`,
+     lineafactura.`LinF_CanProd`,
+     lineafactura.`LinF_Des`,
+     lineafactura.`LinF_Iva`
+FROM
+     `lineafactura` lineafactura
+WHERE 
+     Fac_Num = $P{FacNum}]]>
+	</queryString>
+	<field name="LinF_PrePro" class="java.lang.Double"/>
+	<field name="LinF_CanProd" class="java.lang.Double"/>
+	<field name="LinF_Des" class="java.lang.Double"/>
+	<field name="LinF_Iva" class="java.lang.Double"/>
+	<variable name="SubTot" class="java.lang.Float" calculation="Sum">
+		<variableExpression><![CDATA[$F{LinF_PrePro}*$F{LinF_CanProd}]]></variableExpression>
+	</variable>
+	<variable name="SumDes" class="java.lang.Float" calculation="Sum">
+		<variableExpression><![CDATA[($F{LinF_CanProd}*$F{LinF_PrePro})*($F{LinF_Des}/100)]]></variableExpression>
+		<initialValueExpression><![CDATA[]]></initialValueExpression>
+	</variable>
+	<variable name="SumIVA" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[($F{LinF_Iva} / 100) * ($F{LinF_CanProd} * $F{LinF_PrePro})]]></variableExpression>
+	</variable>
+	<summary>
+		<band height="842">
+			<textField pattern="#,##0.00">
+				<reportElement x="470" y="384" width="89" height="22"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[($V{SubTot} + $V{SumIVA})]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="470" y="340" width="89" height="22"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{SubTot}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="470" y="805" width="89" height="22"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[($V{SubTot} + $V{SumIVA})]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="470" y="362" width="89" height="22"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{SumIVA}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="470" y="783" width="89" height="22"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{SumIVA}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="470" y="761" width="89" height="22"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{SubTot}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="0" y="421" width="595" height="340"/>
+				<subreportParameter name="Nombre">
+					<subreportParameterExpression><![CDATA[$P{Nombre}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Rut">
+					<subreportParameterExpression><![CDATA[$P{Rut}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Dir">
+					<subreportParameterExpression><![CDATA[$P{Dir}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Fecha">
+					<subreportParameterExpression><![CDATA[$P{Fecha}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ConFin">
+					<subreportParameterExpression><![CDATA[$P{ConFin}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FacNum">
+					<subreportParameterExpression><![CDATA[$P{FacNum}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FecSer">
+					<subreportParameterExpression><![CDATA[$P{FecSer}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[SubReport2]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="0" y="0" width="595" height="340"/>
+				<subreportParameter name="Nombre">
+					<subreportParameterExpression><![CDATA[$P{Nombre}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Rut">
+					<subreportParameterExpression><![CDATA[$P{Rut}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Dir">
+					<subreportParameterExpression><![CDATA[$P{Dir}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Fecha">
+					<subreportParameterExpression><![CDATA[$P{Fecha}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ConFin">
+					<subreportParameterExpression><![CDATA[$P{ConFin}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FacNum">
+					<subreportParameterExpression><![CDATA[$P{FacNum}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FecSer">
+					<subreportParameterExpression><![CDATA[$P{FecSer}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

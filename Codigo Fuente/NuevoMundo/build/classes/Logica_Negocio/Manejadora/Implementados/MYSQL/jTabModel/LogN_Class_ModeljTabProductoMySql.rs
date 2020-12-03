@@ -1,0 +1,1 @@
+Logica_Negocio.Manejadora.MYSQL.jTabModel.LogN_Class_ModeljTabProductoMySql

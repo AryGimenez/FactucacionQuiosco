@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Codigo Fuente/NuevoMundo/src"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/dist/lib/AbsoluteLayout.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/dist/lib/barbecue-1.5-beta1.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/dist/lib/commons-beanutils-1.8.2.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/dist/lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/dist/lib/commons-digester-1.7.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/dist/lib/commons-javaflow-20060411.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/dist/lib/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/dist/lib/hsqldb.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/dist/lib/iText-2.1.7.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/dist/lib/jasperreports-3.7.6.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/dist/lib/jcalendar-1.3.2.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/dist/lib/jide-oss-2.7.2.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/dist/lib/mysql-connector-java-5.1.16-bin.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/dist/lib/swing-layout-1.0.4.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/dist/NuevoMundo.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/lib/AbsoluteLayout.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/lib/barbecue-1.5-beta1.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/lib/commons-beanutils-1.8.2.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/lib/commons-digester-1.7.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/lib/commons-javaflow-20060411.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/lib/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/lib/hsqldb.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/lib/iText-2.1.7.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/lib/jasperreports-3.7.6.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/lib/jcalendar-1.3.2.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/lib/jide-oss-2.7.2.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/lib/mysql-connector-java-5.1.16-bin.jar"/>
+	<classpathentry kind="lib" path="Codigo Fuente/NuevoMundo/lib/swing-layout-1.0.4.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="Codigo Fuente/NuevoMundo/build/classes"/>
+</classpath>

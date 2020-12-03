@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="340" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.5000000000000109"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Nombre" class="java.lang.String"/>
+	<parameter name="Rut" class="java.lang.String"/>
+	<parameter name="Dir" class="java.lang.String"/>
+	<parameter name="Fecha" class="java.util.GregorianCalendar"/>
+	<parameter name="ConFin" class="java.lang.Boolean"/>
+	<parameter name="FacNum" class="java.lang.Integer"/>
+	<parameter name="FecSer" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     lineafactura.`Pro_CodIn`,
+     lineafactura.`LinF_PrePro`,
+     lineafactura.`LinF_CanProd`,
+     lineafactura.`LinF_Des`,
+     lineafactura.`LinF_Iva`,
+     producto.`Pro_Nom`
+FROM
+     `lineafactura` lineafactura INNER JOIN `producto` producto ON lineafactura.`Pro_CodIn` = producto.`Pro_CodIn`
+WHERE 
+     Fac_Num = $P{FacNum}]]>
+	</queryString>
+	<field name="Pro_CodIn" class="java.lang.Integer"/>
+	<field name="LinF_PrePro" class="java.lang.Double"/>
+	<field name="LinF_CanProd" class="java.lang.Double"/>
+	<field name="LinF_Des" class="java.lang.Double"/>
+	<field name="LinF_Iva" class="java.lang.Double"/>
+	<field name="Pro_Nom" class="java.lang.String"/>
+	<variable name="SubTot" class="java.lang.Float" calculation="Sum">
+		<variableExpression><![CDATA[$F{LinF_PrePro}*$F{LinF_CanProd}]]></variableExpression>
+	</variable>
+	<variable name="SumDes" class="java.lang.Float" calculation="Sum">
+		<variableExpression><![CDATA[($F{LinF_CanProd}*$F{LinF_PrePro})*($F{LinF_Des}/100)]]></variableExpression>
+		<initialValueExpression><![CDATA[]]></initialValueExpression>
+	</variable>
+	<variable name="SumIVA" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[($F{LinF_Iva} / 100) * ($F{LinF_CanProd} * $F{LinF_PrePro})]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="179" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="264" y="91" width="159" height="31"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{Rut}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="423" y="91" width="34" height="31"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{ConFin} ? "X" : null]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="461" y="91" width="34" height="31"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{Fecha}.get(java.util.Calendar.DAY_OF_MONTH)]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="495" y="91" width="34" height="31"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{Fecha}.get(java.util.Calendar.MONTH)]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="529" y="91" width="34" height="31"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{Fecha}.get(java.util.Calendar.YEAR)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="85" y="130" width="478" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="73" y="154" width="490" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{Dir}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<textField>
+				<reportElement x="38" y="0" width="437" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Can: " + $F{LinF_CanProd} +"   Des: Cod - " + $F{Pro_CodIn} + " Nom - " + $F{Pro_Nom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="475" y="0" width="89" height="13"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{LinF_PrePro} * $F{LinF_CanProd}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

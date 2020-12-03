@@ -1,0 +1,97 @@
+<class-diagram version="1.0.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <class id="1" corner="BOTTOM_RIGHT" language="java" name="Logica_Negocio.Dominio.FormaPago.Dom_Class_Credito" 
+    project="NuevoMundo" file="/NuevoMundo/src/Logica_Negocio/Dominio/FormaPago/Dom_Class_Credito.java" binary="false">    
+    <position x="400" y="285" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="2" corner="BOTTOM_RIGHT" language="java" name="Logica_Negocio.LogN_ClassAb_Factura" project="NuevoMundo" 
+    file="/NuevoMundo/src/Logica_Negocio/LogN_ClassAb_Factura.java" binary="false">    
+    <position x="667" y="42" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <interface id="3" corner="BOTTOM_RIGHT" language="java" name="Logica_Negocio.LogN_Inter_FormaPag" project="NuevoMundo" 
+    file="/NuevoMundo/src/Logica_Negocio/LogN_Inter_FormaPag.java" binary="false">    
+    <position x="703" y="284" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <class id="4" corner="BOTTOM_RIGHT" language="java" name="Logica_Negocio.Dominio.FormaPago.Dom_Class_Contado" 
+    project="NuevoMundo" file="/NuevoMundo/src/Logica_Negocio/Dominio/FormaPago/Dom_Class_Contado.java" binary="false">    
+    <position x="973" y="365" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="5" corner="BOTTOM_RIGHT" language="java" name="Logica_Negocio.Dominio.FormaPago.Dom_Class_Cuota" 
+    project="NuevoMundo" file="/NuevoMundo/src/Logica_Negocio/Dominio/FormaPago/Dom_Class_Cuota.java" binary="false">    
+    <position x="714" y="687" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="6" corner="BOTTOM_RIGHT" language="java" name="Logica_Negocio.LogN_ClassAb_Credito" project="NuevoMundo" 
+    file="/NuevoMundo/src/Logica_Negocio/LogN_ClassAb_Credito.java" binary="false">    
+    <position x="-10" y="-106" width="361" height="243"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="7" corner="BOTTOM_RIGHT" language="java" name="Logica_Negocio.Dominio.FormaPago.Dom_Class_PlanCredito" 
+    project="NuevoMundo" file="/NuevoMundo/src/Logica_Negocio/Dominio/FormaPago/Dom_Class_PlanCredito.java" 
+    binary="false">    
+    <position x="-115" y="425" width="363" height="163"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <association>    
+    <end type="SOURCE" nodeId="5" navigable="false">      
+      <attribute name="mObjCred"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" nodeId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization>    
+    <end type="SOURCE" nodeId="7"/>    
+    <end type="TARGET" nodeId="6"/>  
+  </generalization>  
+  <realization>    
+    <end type="SOURCE" nodeId="4"/>    
+    <end type="TARGET" nodeId="3"/>  
+  </realization>  
+  <generalization>    
+    <end type="SOURCE" nodeId="1"/>    
+    <end type="TARGET" nodeId="6"/>  
+  </generalization>  
+  <association>    
+    <end type="SOURCE" nodeId="2" navigable="false">      
+      <attribute name="mColForPag"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" nodeId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization>    
+    <end type="SOURCE" nodeId="1"/>    
+    <end type="TARGET" nodeId="3"/>  
+  </realization>  
+  <classifier-display autosize="true" package="true" initial-value="false" signature="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true"/>    
+    <operations public="true" package="true" protected="true" private="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
